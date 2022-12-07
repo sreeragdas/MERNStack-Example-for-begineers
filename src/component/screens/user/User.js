@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { TextField ,  Button } from '@mui/material';
-
+import './styless.css';
 function User(){
     const[name , setName]=useState()
     const [result , setResult]=useState([])
@@ -21,22 +21,18 @@ function User(){
     return(
         <div className='user'>
             <div className='user-text'>
-                <p>User tab</p>
+                <p className='title'>User Tab</p>
 
             </div>
           
-            <div>
-                <label>User name</label>
-            <TextField name='name' value={name} onChange={(e)=>{setName(e.target.value)}}></TextField>
+            <div className='text'>
+                <label className='label' >User Name</label>
+            <TextField size='small' name='name' value={name} onChange={(e)=>{setName(e.target.value)}}></TextField>
             </div>
-            <div>
-                <Button onClick={handleSubmit}>Submit</Button>
+            <div className='text'>
+                <Button className='button' onClick={handleSubmit}>Submit</Button>
             </div>
-            {
-                result.map((item )=>{
-                    return(<div>{item.name}</div>);
-                })
-            }
+           
             
         </div>
     );
