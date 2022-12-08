@@ -20,6 +20,7 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverA
 app.get('/',(req,res)=>{
     res.send('goodday!')
 })
+
 const exerciseRouter=require('./routes/exercise')
 const userRouter=require('./routes/user')
 app.use('/exercise',exerciseRouter)

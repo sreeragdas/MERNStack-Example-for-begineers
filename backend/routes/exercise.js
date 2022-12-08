@@ -1,10 +1,11 @@
 const router = require('express').Router();
 let Exercise = require('../models/exercise.model');
-router.route('/').get((req,res)=>{
+
+router.route('/').get((req, res) => {
     Exercise.find()
-    .then(exercise=>res.join())
-    .catch(err=>res.status(400).json('Error :' ,err));
-});
+      .then(exercise => res.json())
+      .catch(err => res.status(400).json('Error: ' + err));
+  });
 
 router.post('/add',(req,res)=>{
     const username =req.body.username;
